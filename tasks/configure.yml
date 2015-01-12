@@ -47,6 +47,6 @@
     mode: 0640
 
 - name: Reload The PostgreSQL Configuration
-  command: service postgresql{{ join_char | default("-")}}{{ postgresql_version }} restart
+  service: name=postgresql{{ join_char | default("-")}}{{ postgresql_version }} state=restarted enabled=yes
 
 
